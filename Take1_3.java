@@ -77,8 +77,12 @@ public class Take1_3
   public static void main(String[] args)
   {
     kboard = new Scanner(System.in);
-
-    int n = 8 + (int)(4 * Math.random());
+    int n;
+    try {
+        n = Integer.parseInt(args[0]);
+    } catch (Exception e) {
+        n = 8 + (int) (4 * Math.random());
+    }
     Take1_3 game = new Take1_3(n);
     game.play();
 
